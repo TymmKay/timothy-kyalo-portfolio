@@ -59,8 +59,19 @@ li{margin:6px 0}
 .proj{display:grid;grid-template-columns:90px 1fr 1.4fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
 .proj b{font-weight:700}
 .proj span{color:var(--mute)}
+
+/* Gallery Styles for Progress & Finished Photos */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:28px}
+.gallery-card{background:#fff;border:2px solid var(--ink);overflow:hidden;position:relative}
+.gallery-card img{width:100%;height:220px;object-fit:cover;display:block;border-bottom:2px solid var(--ink)}
+.gallery-info{padding:16px}
+.gallery-info h3{font-size:1.1rem;margin-bottom:6px;font-weight:700}
+.gallery-info p{font-size:0.9rem;color:var(--mute)}
+.badge{display:inline-block;padding:3px 8px;font-size:12px;font-weight:700;text-transform:uppercase;margin-bottom:8px;border:1px solid var(--ink)}
+.badge.progress{background:var(--hv);color:var(--ink)}
+.badge.finished{background:var(--steel);color:var(--bg)}
+
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-h3{font-size:1.1rem;margin-bottom:8px}
 .list{list-style:none;padding:0}
 .list li{margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
 .list small{display:block;color:var(--mute);font-size:15px}
@@ -79,7 +90,7 @@ section{padding:56px 0}
 <body>
 <header><div class="wrap">
 <b>Timothy Kyalo Syombua</b>
-<nav aria-label="Sections"><a href="#programme">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Sections"><a href="#programme">Experience</a><a href="#projects">Projects</a><a href="#gallery">Site Gallery</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main>
@@ -209,6 +220,56 @@ section{padding:56px 0}
         <span>Managed complex MEP integration and rapid execution for commercial plumbing and spatial reconfiguration.</span>
       </div>
       <span>Tatu City, Kenya</span>
+    </div>
+  </section>
+
+  <!-- NEW SITE GALLERY SECTION FOR IN-PROGRESS & FINISHED PHOTOS -->
+  <section id="gallery">
+    <h2>Site Gallery</h2>
+    <p class="sub">Visual progression from structural framework and in-progress execution to polished completion.</p>
+    
+    <div class="gallery-grid">
+      <!-- Item 1: In Progress -->
+      <div class="gallery-card">
+        <span class="badge progress">In Progress</span>
+        <!-- Replace src with your in-progress photo filename -->
+        <img src="path-to-your-progress-photo-1.jpg" alt="NCBA Tatu City Fitout Construction in Progress">
+        <div class="gallery-info">
+          <h3>NCBA Tatu City Fit-Out</h3>
+          <p>MEP rough-ins and partition framing phase.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: Finished -->
+      <div class="gallery-card">
+        <span class="badge finished">Finished</span>
+        <!-- Replace src with your finished photo filename -->
+        <img src="path-to-your-finished-photo-1.jpg" alt="NCBA Tatu City Fitout Finished">
+        <div class="gallery-info">
+          <h3>NCBA Tatu City Fit-Out</h3>
+          <p>Completed corporate banking hall and executive finishes.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: In Progress -->
+      <div class="gallery-card">
+        <span class="badge progress">In Progress</span>
+        <img src="path-to-your-progress-photo-2.jpg" alt="Ministry of ICT Office Fit-Out In Progress">
+        <div class="gallery-info">
+          <h3>Ministry of ICT Office Fit-Out</h3>
+          <p>Ceiling grid installation and cabling works.</p>
+        </div>
+      </div>
+
+      <!-- Item 4: Finished -->
+      <div class="gallery-card">
+        <span class="badge finished">Finished</span>
+        <img src="path-to-your-finished-photo-2.jpg" alt="Ministry of ICT Office Fit-Out Finished">
+        <div class="gallery-info">
+          <h3>Ministry of ICT Office Fit-Out</h3>
+          <p>Final handover of executive office suites.</p>
+        </div>
+      </div>
     </div>
   </section>
 
