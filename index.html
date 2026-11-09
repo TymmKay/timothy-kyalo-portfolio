@@ -36,13 +36,10 @@ h1 span{display:block}
 .photo{position:relative;aspect-ratio:1/1;width:100%;max-width:400px;justify-self:end}
 .photo::before{content:"";position:absolute;inset:16px -16px -16px 16px;background:var(--hv)}
 .frame{position:absolute;inset:0;background:#D3D9DC;display:grid;place-items:center;color:var(--steel);font-stretch:62%;font-weight:800;font-size:7rem;overflow:hidden}
-.frame[data-ini]::after{content:attr(data-ini)}
 .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
 section{padding:72px 0;border-top:2px solid var(--ink)}
 h2{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:12px}
 .sub{color:var(--mute);max-width:60ch;margin-bottom:36px}
-.axis{position:relative;height:24px;font-size:14px;color:var(--mute)}
-.axis span{position:absolute;transform:translateX(-50%)}
 details{border-bottom:1px solid var(--line)}
 summary{list-style:none;cursor:pointer;padding:20px 0 14px}
 summary::-webkit-details-marker{display:none}
@@ -60,14 +57,17 @@ li{margin:6px 0}
 .proj b{font-weight:700}
 .proj span{color:var(--mute)}
 
-/* Gallery Styles for Progress & Finished Photos */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:28px}
-.gallery-card{background:#fff;border:2px solid var(--ink);overflow:hidden;position:relative}
-.gallery-card img{width:100%;height:220px;object-fit:cover;display:block;border-bottom:2px solid var(--ink)}
-.gallery-info{padding:16px}
-.gallery-info h3{font-size:1.1rem;margin-bottom:6px;font-weight:700}
-.gallery-info p{font-size:0.9rem;color:var(--mute)}
-.badge{display:inline-block;padding:3px 8px;font-size:12px;font-weight:700;text-transform:uppercase;margin-bottom:8px;border:1px solid var(--ink)}
+/* Project Showcase & Stage Comparison Styles */
+.project-showcase{margin-top:32px;display:flex;flex-direction:column;gap:48px}
+.project-item{background:#fff;border:2px solid var(--ink);padding:24px}
+.project-item h3{font-size:1.4rem;font-weight:800;margin-bottom:6px}
+.project-meta{font-size:0.95rem;color:var(--mute);margin-bottom:20px}
+.stages-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stage-box{border:1px solid var(--line);background:var(--bg);padding:16px}
+.stage-box h4{font-size:1rem;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.stage-box img{width:100%;height:200px;object-fit:cover;border:1px solid var(--ink);display:block;margin-bottom:10px}
+.stage-box p{font-size:0.9rem;color:var(--mute)}
+.badge{display:inline-block;padding:3px 8px;font-size:11px;font-weight:700;text-transform:uppercase;border:1px solid var(--ink)}
 .badge.progress{background:var(--hv);color:var(--ink)}
 .badge.finished{background:var(--steel);color:var(--bg)}
 
@@ -78,11 +78,13 @@ li{margin:6px 0}
 .mail{font-stretch:62%;font-weight:800;font-size:clamp(2rem,7vw,4.2rem);line-height:1;text-decoration:underline;text-decoration-color:var(--hv);text-decoration-thickness:8px;text-underline-offset:6px;word-break:break-word}
 .contact p{margin-top:20px;font-size:1.1rem}
 footer{padding:24px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+
 @media(max-width:760px){
 .hero{grid-template-columns:1fr;gap:48px;padding-bottom:56px}
 .photo{justify-self:start;max-width:280px}
 .cols{grid-template-columns:1fr;gap:36px}
 .proj{grid-template-columns:1fr;gap:4px}
+.stages-grid{grid-template-columns:1fr}
 section{padding:56px 0}
 }
 </style>
@@ -90,7 +92,7 @@ section{padding:56px 0}
 <body>
 <header><div class="wrap">
 <b>Timothy Kyalo Syombua</b>
-<nav aria-label="Sections"><a href="#programme">Experience</a><a href="#projects">Projects</a><a href="#gallery">Site Gallery</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Sections"><a href="#programme">Experience</a><a href="#projects">Projects</a><a href="#gallery">Project Stages</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main>
@@ -223,93 +225,92 @@ section{padding:56px 0}
     </div>
   </section>
 
-  <!-- NEW SITE GALLERY SECTION FOR IN-PROGRESS & FINISHED PHOTOS -->
+  <!-- PROJECT PROGRESS VS COMPLETED GALLERY SECTION -->
   <section id="gallery">
-    <h2>Site Gallery</h2>
-    <p class="sub">Visual progression from structural framework and in-progress execution to polished completion.</p>
+    <h2>Project Progression: In-Progress vs. Completed</h2>
+    <p class="sub">Side-by-side visual documentation tracking each project from initial site execution and fit-out phases to polished final handover.</p>
     
-    <div class="gallery-grid">
-      <!-- Item 1: In Progress -->
-      <div class="gallery-card">
-        <span class="badge progress">In Progress</span>
-        <!-- Replace src with your in-progress photo filename -->
-        <img src="path-to-your-progress-photo-1.jpg" alt="NCBA Tatu City Fitout Construction in Progress">
-        <div class="gallery-info">
-          <h3>NCBA Tatu City Fit-Out</h3>
-          <p>MEP rough-ins and partition framing phase.</p>
+    <div class="project-showcase">
+      
+      <!-- Project 1 -->
+      <div class="project-item">
+        <h3>1. NCBA Bank Fit-Out, Tatu City (2024)</h3>
+        <p class="project-meta">Location: Tatu City, Kenya · Timeline: 3 Months</p>
+        <div class="stages-grid">
+          <div class="stage-box">
+            <h4>In Progress <span class="badge progress">Site Phase</span></h4>
+            <img src="ncba-progress.jpg" alt="NCBA Tatu City Fit-Out In Progress">
+            <p>MEP rough-ins, drywall framing, and structural partition setup.</p>
+          </div>
+          <div class="stage-box">
+            <h4>Completed <span class="badge finished">Handover</span></h4>
+            <img src="ncba-finished.jpg" alt="NCBA Tatu City Fit-Out Completed">
+            <p>Fully fitted modern banking hall with executive finishes.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Item 2: Finished -->
-      <div class="gallery-card">
-        <span class="badge finished">Finished</span>
-        <!-- Replace src with your finished photo filename -->
-        <img src="path-to-your-finished-photo-1.jpg" alt="NCBA Tatu City Fitout Finished">
-        <div class="gallery-info">
-          <h3>NCBA Tatu City Fit-Out</h3>
-          <p>Completed corporate banking hall and executive finishes.</p>
+      <!-- Project 2 -->
+      <div class="project-item">
+        <h3>2. Residential Apartment, South C (2025)</h3>
+        <p class="project-meta">Location: South C, Nairobi · Multi-family residential units</p>
+        <div class="stages-grid">
+          <div class="stage-box">
+            <h4>In Progress <span class="badge progress">Site Phase</span></h4>
+            <img src="southc-progress.jpg" alt="South C Residential Apartment In Progress">
+            <p>Concrete framework curing and exterior masonry wall construction.</p>
+          </div>
+          <div class="stage-box">
+            <h4>Completed <span class="badge finished">Handover</span></h4>
+            <img src="southc-finished.jpg" alt="South C Residential Apartment Completed">
+            <p>Completed structural exterior and ready residential units.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Item 3: In Progress -->
-      <div class="gallery-card">
-        <span class="badge progress">In Progress</span>
-        <img src="path-to-your-progress-photo-2.jpg" alt="Ministry of ICT Office Fit-Out In Progress">
-        <div class="gallery-info">
-          <h3>Ministry of ICT Office Fit-Out</h3>
-          <p>Ceiling grid installation and cabling works.</p>
+      <!-- Project 3 -->
+      <div class="project-item">
+        <h3>3. Ministry of ICT Office Fit-Out (2025)</h3>
+        <p class="project-meta">Location: Nairobi, Kenya · Strict budget compliance</p>
+        <div class="stages-grid">
+          <div class="stage-box">
+            <h4>In Progress <span class="badge progress">Site Phase</span></h4>
+            <img src="ict-progress.jpg" alt="Ministry of ICT Office Fit-Out In Progress">
+            <p>Structured cabling installation and acoustic ceiling grid setup.</p>
+          </div>
+          <div class="stage-box">
+            <h4>Completed <span class="badge finished">Handover</span></h4>
+            <img src="ict-finished.jpg" alt="Ministry of ICT Office Fit-Out Completed">
+            <p>Finished government office suites with rigorous quality checks.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Item 4: Finished -->
-      <div class="gallery-card">
-        <span class="badge finished">Finished</span>
-        <img src="path-to-your-finished-photo-2.jpg" alt="Ministry of ICT Office Fit-Out Finished">
-        <div class="gallery-info">
-          <h3>Ministry of ICT Office Fit-Out</h3>
-          <p>Final handover of executive office suites.</p>
+      <!-- Project 4 -->
+      <div class="project-item">
+        <h3>4. DIB Branch Fit-Out Finishing, South C (2024)</h3>
+        <p class="project-meta">Location: South C, Nairobi · Interior architectural finishing</p>
+        <div class="stages-grid">
+          <div class="stage-box">
+            <h4>In Progress <span class="badge progress">Site Phase</span></h4>
+            <img src="dib-progress.jpg" alt="DIB Branch Fit-Out In Progress">
+            <p>Surface priming, flooring prep, and custom joinery alignment.</p>
+          </div>
+          <div class="stage-box">
+            <h4>Completed <span class="badge finished">Handover</span></h4>
+            <img src="dib-finished.jpg" alt="DIB Branch Fit-Out Completed">
+            <p>Polished corporate interior ready for commercial operations.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section id="skills">
-    <h2>Core Competencies</h2>
-    <p class="sub">Technical and operational expertise brought to every job site.</p>
-    <div class="cols">
-      <div>
-        <h3>Project Management & Control</h3>
-        <ul class="list">
-          <li>Project Scheduling & MS Project <small>Critical path method and milestone tracking[cite: 3]</small></li>
-          <li>Budgeting & Cost Control <small>Variance analysis and expense management[cite: 3]</small></li>
-          <li>Contract Administration <small>Subcontractor negotiations and tender evaluation</small></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Site Execution & Safety</h3>
-        <ul class="list">
-          <li>QA/QC Quality Assurance <small>Rigorous compliance inspections and defect control[cite: 4]</small></li>
-          <li>HSE Management <small>OSHA-4 certified health & safety enforcement[cite: 3]</small></li>
-          <li>Workforce Coordination <small>Managing multi-disciplinary teams and trade contractors[cite: 4]</small></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Let's Build Together</h2>
-    <p class="sub">Looking for a dedicated construction manager to lead your upcoming residential or commercial development?</p>
-    <a href="mailto:timothykyalo47@gmail.com" class="mail">timothykyalo47@gmail.com</a>
-    <p>Based in Nairobi, Kenya · 0716 459 758[cite: 3] · Available for local and regional contracts.</p>
-  </section>
-</div>
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>© 2026 Timothy Kyalo Syombua. All rights reserved.</p>
-  </div>
-</footer>
-
-</body>
-</html>
+      <!-- Project 5 -->
+      <div class="project-item">
+        <h3>5. Washroom Relocation, NCBA / Tatu City (2024)</h3>
+        <p class="project-meta">Location: Tatu City, Kenya · Complex MEP integration</p>
+        <div class="stages-grid">
+          <div class="stage-box">
+            <h4>In Progress <span class="badge progress">Site Phase</span></h4>
+            <img src="washroom-progress.jpg" alt="Washroom Relocation In Progress">
+            <p>Plumbing rerouting, core drilling, and drainage reconfiguration.</p>
+          </div>
