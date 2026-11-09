@@ -19,9 +19,11 @@ a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px;gap:16px;flex-wrap:wrap}
 header b{font-weight:800}
-nav{display:flex;gap:22px;font-size:15px}
+nav{display:flex;gap:22px;font-size:15px;align-items:center}
 nav a{text-decoration:none;font-weight:500}
 nav a:hover{text-decoration:underline;text-decoration-color:var(--hv);text-decoration-thickness:3px;text-underline-offset:5px}
+.social-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--ink);color:var(--bg);border-radius:4px;font-weight:700;font-size:13px;text-decoration:none}
+.social-icon:hover{background:var(--hv);color:var(--ink)}
 .cover{display:block;width:100%;height:auto;border:2px solid var(--ink);margin-bottom:24px}
 .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;padding:24px 0 80px}
 h1,h2{font-stretch:62%;font-weight:800;line-height:.95}
@@ -92,7 +94,14 @@ section{padding:56px 0}
 <body>
 <header><div class="wrap">
 <b>Timothy Kyalo Syombua</b>
-<nav aria-label="Sections"><a href="#programme">Experience</a><a href="#projects">Projects</a><a href="#gallery">Project Stages</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Sections">
+  <a href="#programme">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#gallery">Project Stages</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.linkedin.com/in/timothy-kyalo-" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">in</a>
+</nav>
 </div></header>
 
 <main>
@@ -108,6 +117,7 @@ section{padding:56px 0}
       <div class="btns">
         <a href="#contact" class="btn primary">Get in Touch</a>
         <a href="#projects" class="btn">View Projects</a>
+        <a href="https://www.linkedin.com/in/timothy-kyalo-" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn Profile</a>
       </div>
     </div>
     <div class="photo">
@@ -227,7 +237,7 @@ section{padding:56px 0}
     </div>
   </section>
 
-  <!-- PROJECT PROGRESS VS COMPLETED GALLERY SECTION WITH UPDATED ICT FINISHED PHOTO -->
+  <!-- PROJECT PROGRESS VS COMPLETED GALLERY SECTION -->
   <section id="gallery">
     <h2>Project Progression: In-Progress vs. Completed</h2>
     <p class="sub">Side-by-side visual documentation tracking each project from initial site execution and fit-out phases to polished final handover.</p>
@@ -270,7 +280,7 @@ section{padding:56px 0}
         </div>
       </div>
 
-      <!-- Project 3: Ministry of ICT Office Fit-Out (Updated with ictfinished.jpg) -->
+      <!-- Project 3: Ministry of ICT Office Fit-Out -->
       <div class="project-item">
         <h3>3. Ministry of ICT Office Fit-Out (2025)[cite: 5]</h3>
         <p class="project-meta">Location: Nairobi, Kenya · Strict budget compliance[cite: 5]</p>
@@ -354,7 +364,7 @@ section{padding:56px 0}
     <h2>Let's Build Together</h2>
     <p class="sub">Looking for a dedicated construction manager to lead your upcoming residential or commercial development?</p>
     <a href="mailto:timothykyalo47@gmail.com" class="mail">timothykyalo47@gmail.com</a>
-    <p>Based in Nairobi, Kenya · 0716 459 758[cite: 3] · Available for local and regional contracts.</p>
+    <p>Based in Nairobi, Kenya · 0716 459 758[cite: 3] · <a href="https://www.linkedin.com/in/timothy-kyalo-" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a> · Available for local and regional contracts.</p>
   </section>
 </div>
 </main>
